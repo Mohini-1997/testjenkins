@@ -51,6 +51,11 @@
 pipeline {
     agent any
     stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/GhulamShubhaniGfuture/testjenkins.git'
+            }
+        }
         stage('Install Dependencies') {
             steps {
                 bat 'npm install' // Use bat if on Windows
