@@ -1,14 +1,9 @@
 pipeline {
     agent any
     tools {
-        nodejs 'NodeJS_LTS' // Replace with your Node.js version
+        nodejs 'NodeJS_LTS' // Replace with the name you configured in Global Tool Configuration
     }
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/GhulamShubhaniGfuture/testjenkins.git'
-            }
-        }
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
